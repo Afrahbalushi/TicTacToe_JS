@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <style>
+        td {
+            font-size: 80px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border: 2px;
+            border-style: outset;
+            color: rgb(16, 16, 189);
+            cursor: pointer;
+        }
+
+        div {
+            padding-top: 20px;
+        }
+
+        body {
+            background-attachment: fixed;
+            background-color: lightsteelblue;
+        }
+
+        .playerX {
+            color: rgb(220, 7, 7);
+        }
+
+        .playerO {
+            color: rgb(3, 3, 213);
+        }
+
+        h1 {
+            color: rgb(2, 2, 166);
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <marquee>
+            <h1>
+                Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac
+                Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic
+                Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe
+                Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac
+                Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic
+                Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe
+                Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac
+                Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic
+                Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe
+                Tic Tac Toe Tic Tac Toe
+            </h1>
+        </marquee>
+        <div style='float:left'>
+            <img alt="" src="blue.png" height="250px" width="250px" style="padding-left: 100px; padding-top: 40px;" />
+        </div>
+        <div style='float:right'>
+            <img alt="" src="R.png" height="250px" width="250px" style="padding-right: 100px;  padding-top: 40px;" />
+        </div>
+        <div style='float:center;'>
+            <center>
+                <table>
+                    <tr>
+                        <td id="1" onclick="ChangeText(this)">-</td>
+                        <td id="2" onclick="ChangeText(this)">-</td>
+                        <td id="3" onclick="ChangeText(this)">-</td>
+                    </tr>
+                    <tr>
+                        <td id="4" onclick="ChangeText(this)">-</td>
+                        <td id="5" onclick="ChangeText(this)">-</td>
+                        <td id="6" onclick="ChangeText(this)">-</td>
+                    </tr>
+                    <tr>
+                        <td id="7" onclick="ChangeText(this)">-</td>
+                        <td id="8" onclick="ChangeText(this)">-</td>
+                        <td id="9" onclick="ChangeText(this)">-</td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <h1 id="win" style="text-align: center; color: green;"></h1>
+        <marquee>
+            <h1>
+                Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac
+                Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic
+                Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe
+                Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac
+                Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic
+                Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe
+                Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac
+                Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic
+                Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe Tic Tac Toe
+                Tic Tac Toe Tic Tac Toe
+            </h1>
+        </marquee>
+
+    </div>
+
+    <script>
+        let currentPlayer = 'X';
+        let gameOver = false;
+        let count = 0;
+
+        const checkForWin = () => {
+            winCombinationsBasedOnId = [[1, 5, 9], [3, 5, 7],[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9]]
+            winCombinationsBasedOnId.forEach((currWinCombination) => {
+                const firstPosVal = document.getElementById(currWinCombination[0]).innerHTML;
+                const secondPosVal = document.getElementById(currWinCombination[1]).innerHTML;
+                const thirdPosVal = document.getElementById(currWinCombination[2]).innerHTML;
+                if(firstPosVal !== "-" && firstPosVal === secondPosVal && firstPosVal === thirdPosVal) {
+                    // Win Message
+                    gameOver = true;
+                    document.getElementById("win").innerHTML = "Player " + firstPosVal + " wins!"
+                }
+            });
+        };
+        
+        const ChangeText = (cell) => {
+            if (!gameOver && cell.innerHTML === '-') {
+                cell.innerHTML = currentPlayer;
+                cell.classList.add(currentPlayer === 'X' ? 'playerX' : 'playerO');
+
+                count++;
+
+                // Check for the winning conditions
+                checkForWin();
+
+                if(!gameOver && count >= 9) {
+                    document.getElementById("win").innerHTML = "it's a Draw!! ";
+                } else {
+                    // Toggle Player Symbol
+                    currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+                };
+                
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
